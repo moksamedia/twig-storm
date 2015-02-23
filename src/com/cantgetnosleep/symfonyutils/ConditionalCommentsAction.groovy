@@ -12,7 +12,7 @@ class ConditionalCommentsAction extends EditorAction {
     public static REGEX_COMMENT_END = /(<!--(\s)*)*<!\[endif\]-->(?!(\s{0,5}\{)+)/
 
     public ConditionalCommentsAction() {
-        super(new MultiLineSelectActionHandler(ConditionalCommentsAction))
+        super(new PluginActionHandler(ConditionalCommentsAction))
     }
 
     public static String transform(String input) {

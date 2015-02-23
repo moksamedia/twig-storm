@@ -6,7 +6,7 @@ class ImageAction extends EditorAction {
 
 
     public ImageAction() {
-        super(new MultiLineSelectActionHandler(ImageAction))
+        super(new PluginActionHandler(ImageAction))
     }
 
     public static String transform(String input) {

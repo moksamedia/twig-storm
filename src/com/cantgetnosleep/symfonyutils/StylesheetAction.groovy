@@ -5,10 +5,12 @@ import com.intellij.openapi.editor.actionSystem.EditorAction
 class StylesheetAction extends EditorAction {
 
     public StylesheetAction() {
-        super(new MultiLineActionHandler(StylesheetAction))
+        super(new PluginActionHandler(StylesheetAction))
     }
 
     public static String transform(String input) {
+
+        String whitespace = input.find(/^\s*/)
 
         String acc = "{% stylesheets\n"
 
@@ -31,7 +33,10 @@ class StylesheetAction extends EditorAction {
         acc += "\t" + '<link rel="stylesheet" src="{{ asset_url }}" />' + "\n"
         acc += '{% endstylesheets %}' + "\n"
 
-        acc
+        String whitespaced = ""
+        acc.eachLine {
+            whitespaced += whitespace + it + "\n"
+        }
+        whitespaced
     }
-
 }

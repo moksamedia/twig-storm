@@ -5,11 +5,12 @@ import com.intellij.openapi.editor.actionSystem.EditorAction
 class RawAction extends EditorAction {
 
     public RawAction() {
-        super(new MultiLineActionHandler(RawAction))
+        super(new PluginActionHandler(RawAction))
     }
 
-    public static String transform(String input, String whitespace = '') {
-        "$whitespace{% raw %}\n$input\n{% endraw %}"
+    public static String transform(String input) {
+        String whitespace = input.find(/^\s*/)
+        "${whitespace}{% raw %}\n$input\n${whitespace}{% endraw %}"
     }
 
 }
