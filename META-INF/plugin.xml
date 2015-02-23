@@ -1,0 +1,58 @@
+<idea-plugin version="2">
+    <id>com.cantgetnosleep.symfonyutils</id>
+    <name>Symfony Utils</name>
+    <version>1.0</version>
+    <vendor email="support@yourcompany.com" url="http://www.yourcompany.com">YourCompany</vendor>
+
+    <description><![CDATA[
+      Enter short description for your plugin here.<br>
+      <em>most HTML tags may be used</em>
+    ]]></description>
+
+    <change-notes><![CDATA[
+      Add change notes here.<br>
+      <em>most HTML tags may be used</em>
+    ]]>
+    </change-notes>
+
+    <!-- please see http://confluence.jetbrains.com/display/IDEADEV/Build+Number+Ranges for description -->
+    <idea-version since-build="131"/>
+
+    <!-- please see http://confluence.jetbrains.com/display/IDEADEV/Plugin+Compatibility+with+IntelliJ+Platform+Products
+         on how to target different products -->
+    <depends>com.intellij.modules.platform</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- Add your extensions here -->
+    </extensions>
+
+    <application-components>
+        <!-- Add your application components here -->
+    </application-components>
+
+    <project-components>
+        <!-- Add your project components here -->
+    </project-components>
+
+    <actions>
+         <group id="SymfonyUtils.SymfonyUtilsMenu" text="_Symfony Utils" description="Symfony Utils" popup="true">
+           <add-to-group group-id="ToolsMenu" anchor="last" />
+           <action id="Symfonyutils.JavascriptAction" class="com.cantgetnosleep.symfonyutils.JavascriptAction" text="Process JS" description="Converts HTML Javascript tags to Assetic TWIG" >
+                <keyboard-shortcut first-keystroke="control alt S" second-keystroke="J" keymap="$default"/>
+            </action>
+           <action id="Symfonyutils.ImageAction" class="com.cantgetnosleep.symfonyutils.ImageAction" text="Process IMG" description="Converts HTML IMG tags to Assetic TWIG" >
+                <keyboard-shortcut first-keystroke="control alt S" second-keystroke="I" keymap="$default"/>
+            </action>
+            <action id="Symfonyutils.StylesheetAction" class="com.cantgetnosleep.symfonyutils.StylesheetAction" text="Process CSS" description="Converts HTML Stylesheet tags to Assetic TWIG" >
+                <keyboard-shortcut first-keystroke="control alt S" second-keystroke="C" keymap="$default"/>
+            </action>
+           <action id="Symfonyutils.ConditionalCommentsAction" class="com.cantgetnosleep.symfonyutils.ConditionalCommentsAction" text="Process HTML Conditional Comments" description="Wraps HTML Conditional Comments in RAW Blocks" >
+                <keyboard-shortcut first-keystroke="control alt S" second-keystroke="H" keymap="$default"/>
+            </action>
+            <action id="Symfonyutils.RawAction" class="com.cantgetnosleep.symfonyutils.RawAction" text="Enclose in raw block" description="Enclose selected lines in {% raw %} block" >
+                <keyboard-shortcut first-keystroke="control alt S" second-keystroke="R" keymap="$default"/>
+            </action>
+         </group> 
+    </actions>
+
+</idea-plugin>
