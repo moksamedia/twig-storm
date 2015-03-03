@@ -35,6 +35,9 @@
     <actions>
          <group id="SymfonyUtils.SymfonyUtilsMenu" text="_Symfony Utils" description="Symfony Utils" popup="true">
            <add-to-group group-id="ToolsMenu" anchor="last" />
+            <action id="Symfonyutils.AssetAction" class="com.cantgetnosleep.symfonyutils.AssetAction" text="HREF/URL/SRC to Asset()" description="Convert HREF and SRC to use {{ asset('path/to/thing') }}" >
+                <keyboard-shortcut first-keystroke="control alt S" second-keystroke="U" keymap="$default"/>
+            </action>
            <action id="Symfonyutils.JavascriptAction" class="com.cantgetnosleep.symfonyutils.JavascriptAction" text="Process JS" description="Converts HTML Javascript tags to Assetic TWIG" >
                 <keyboard-shortcut first-keystroke="control alt S" second-keystroke="J" keymap="$default"/>
             </action>

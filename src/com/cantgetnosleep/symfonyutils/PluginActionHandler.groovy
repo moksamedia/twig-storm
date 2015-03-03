@@ -26,7 +26,7 @@ class PluginActionHandler extends EditorWriteActionHandler {
             return
         }
 
-        String result = clazz.transform(selectedText.trim())
+        String result = clazz.transform(selectedText)
 
         editor.getDocument().replaceString(selectionModel.getSelectionStart(), selectionModel.getSelectionEnd(), result);
 
